@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".FrameByFrameAnimationActivity">
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorAccent">
+
+        <TextView
+            android:id="@+id/lblCheckout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/dimen_05dp"
+            android:layout_span="2"
+            android:paddingStart="@dimen/dimen_10dp"
+            android:paddingTop="@dimen/dimen_10dp"
+            android:paddingEnd="@dimen/dimen_10dp"
+            android:paddingBottom="@dimen/dimen_10dp"
+            android:text="@string/label_framed_animation"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/dimen_20sp"
+            android:textStyle="bold"
+            android:typeface="sans" />
+    </TableRow>
+
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:paddingTop="30sp">
+
+        <Button
+            android:id="@+id/btnStartAnim"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/app_button"
+            android:paddingLeft="@dimen/dimen_30sp"
+            android:paddingRight="@dimen/dimen_30sp"
+            android:layout_marginEnd="@dimen/dimen_10dp"
+            android:text="@string/label_start_animation"
+            android:textColor="@android:color/white" />
+
+        <Button
+            android:id="@+id/btnStopAnim"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/app_button"
+            android:paddingLeft="@dimen/dimen_30sp"
+            android:paddingRight="@dimen/dimen_30sp"
+            android:layout_marginStart="@dimen/dimen_10dp"
+            android:text="@string/label_stop_animation"
+            android:textColor="@android:color/white" />
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:paddingTop="30sp">
+
+        <ImageView
+            android:id="@+id/animationImageView"
+            android:layout_span="2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </TableRow>
+</TableLayout>
