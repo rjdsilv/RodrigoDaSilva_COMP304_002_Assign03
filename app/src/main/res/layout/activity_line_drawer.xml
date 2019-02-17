@@ -1,9 +1,207 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_marginStart="@dimen/dimen_10dp"
+    android:layout_marginTop="@dimen/dimen_10dp"
+    android:layout_marginEnd="@dimen/dimen_10dp"
+    android:layout_marginBottom="@dimen/dimen_10dp"
+    android:orientation="vertical"
     tools:context=".LineDrawerActivity">
 
-</android.support.constraint.ConstraintLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/dimen_10dp"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/dimen_10dp"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/lineThicknessTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/dimen_05dp"
+                android:text="@string/label_line_thickness" />
+
+            <Spinner
+                android:id="@+id/lineThicknessSpinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:entries="@array/line_thickness_array" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="110dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/dimen_10dp"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/lineColorTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/dimen_05dp"
+                android:text="@string/label_line_color" />
+
+            <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/lineColorRadioGroup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <RadioButton
+                    android:id="@+id/cyanRadioButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dimen_10dp"
+                    android:checked="true"
+                    android:text="@string/label_color_cyan"
+                    android:textSize="@dimen/dimen_15sp" />
+
+                <RadioButton
+                    android:id="@+id/magentaRadioButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dimen_10dp"
+                    android:text="@string/label_color_magenta"
+                    android:textSize="@dimen/dimen_15sp" />
+
+                <RadioButton
+                    android:id="@+id/yellowRadioButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dimen_10dp"
+                    android:text="@string/label_color_yellow"
+                    android:textSize="@dimen/dimen_15sp" />
+            </RadioGroup>
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/arrowKeysTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/dimen_05dp"
+                android:text="@string/label_arrow_keys" />
+
+            <ImageButton
+                android:id="@+id/arrowUpImageButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimen_30dp"
+                android:layout_marginTop="@dimen/dimen_30dp"
+                android:background="@android:color/background_light"
+                android:contentDescription="@string/desc_arrow_up_image"
+                android:onClick="onDrawClick"
+                app:srcCompat="@drawable/arrow_key_up" />
+
+            <ImageButton
+                android:id="@+id/arrowLeftImageButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_60dp"
+                android:background="@android:color/background_light"
+                android:contentDescription="@string/desc_arrow_left_image"
+                android:onClick="onDrawClick"
+                app:srcCompat="@drawable/arrow_key_left" />
+
+            <ImageButton
+                android:id="@+id/arrowRightImageButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimen_60dp"
+                android:layout_marginTop="@dimen/dimen_60dp"
+                android:background="@android:color/background_light"
+                android:contentDescription="@string/desc_arrow_right_image"
+                android:onClick="onDrawClick"
+                app:srcCompat="@drawable/arrow_key_right" />
+
+            <ImageButton
+                android:id="@+id/arrowDownImageButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimen_30dp"
+                android:layout_marginTop="@dimen/dimen_90dp"
+                android:background="@android:color/background_light"
+                android:contentDescription="@string/desc_arrow_down_image"
+                android:onClick="onDrawClick"
+                app:srcCompat="@drawable/arrow_key_down" />
+
+        </RelativeLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimen_25dp"
+        android:layout_marginEnd="@dimen/dimen_10dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/clearButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/dimen_25dp"
+            android:background="@drawable/app_button"
+            android:onClick="onClearCanvas"
+            android:paddingStart="@dimen/dimen_10dp"
+            android:paddingEnd="@dimen/dimen_10dp"
+            android:text="          Clear           "
+            android:textColor="@android:color/white" />
+
+        <TextView
+            android:id="@+id/xTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="X = "
+            android:textSize="@dimen/dimen_20sp" />
+
+        <TextView
+            android:id="@+id/xValueTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/dimen_25dp"
+            android:textSize="@dimen/dimen_20sp" />
+
+        <TextView
+            android:id="@+id/yTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Y = "
+            android:textSize="@dimen/dimen_20sp" />
+
+        <TextView
+            android:id="@+id/yValueTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/dimen_10dp"
+            android:textSize="@dimen/dimen_20sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimen_25dp"
+        android:layout_marginEnd="@dimen/dimen_10dp"
+        android:orientation="horizontal">
+        <ImageView
+            android:id="@+id/canvasImageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/desc_image_for_drawing" />
+    </LinearLayout>
+</LinearLayout>

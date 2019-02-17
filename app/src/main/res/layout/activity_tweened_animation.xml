@@ -20,7 +20,7 @@
             android:paddingTop="@dimen/dimen_10dp"
             android:paddingEnd="@dimen/dimen_10dp"
             android:paddingBottom="@dimen/dimen_10dp"
-            android:text="@string/lbl_tweened_animation"
+            android:text="@string/label_tweened_animation"
             android:textColor="@android:color/white"
             android:textSize="@dimen/dimen_20sp"
             android:textStyle="bold"

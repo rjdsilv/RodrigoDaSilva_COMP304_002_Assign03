@@ -1,9 +1,22 @@
 <resources>
     <string name="app_name">COMP-308 Assignment 3</string>
-    <string name="label_start_animation">Start</string>
-    <string name="label_stop_animation">Stop</string>
-    <string name="label_framed_animation">Framed Animation</string>
+
+    <string name="desc_arrow_down_image">Arrow Down Image</string>
+    <string name="desc_arrow_left_image">Arrow Left Image</string>
+    <string name="desc_arrow_right_image">Arrow Right Image</string>
+    <string name="desc_arrow_up_image">Arrow Up Image</string>
     <string name="desc_earth_image">Earth Image</string>
     <string name="desc_sun_image">Sun Image</string>
-    <string name="lbl_tweened_animation">Tweened Animation</string>
+    <string name="desc_image_for_drawing">Image For Drawing</string>
+
+    <string name="label_arrow_keys">Arrow Keys</string>
+    <string name="label_color_cyan">Cyan</string>
+    <string name="label_color_magenta">Magenta</string>
+    <string name="label_color_yellow">Yellow</string>
+    <string name="label_framed_animation">Framed Animation</string>
+    <string name="label_line_color">Line Color</string>
+    <string name="label_line_thickness">Line Thickness</string>
+    <string name="label_start_animation">Start</string>
+    <string name="label_stop_animation">Stop</string>
+    <string name="label_tweened_animation">Tweened Animation</string>
 </resources>

@@ -15,7 +15,7 @@
     <translate
         android:duration="4000"
         android:fillAfter="false"
-        android:toXDelta="-400" />
+        android:toXDelta="-38%p" />
 
     <scale
         android:duration="4000"
@@ -31,6 +31,6 @@
         android:duration="4000"
         android:fillAfter="false"
         android:startOffset="4000"
-        android:toXDelta="-17.5" />
+        android:toXDelta="0.25%p" />
 
 </set>
