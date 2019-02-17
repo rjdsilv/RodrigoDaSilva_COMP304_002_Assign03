@@ -1,5 +1,6 @@
 package ca.centennialcollege.rodrigodasilva_comp304_002_assign03;
 
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Color;
@@ -63,6 +64,10 @@ public class LineDrawerActivity extends AppCompatActivity {
             case KeyEvent.KEYCODE_DPAD_RIGHT:
                 drawRight();
                 return true;
+
+            case KeyEvent.KEYCODE_BACK:
+                startActivity(new Intent(this, MainActivity.class));
+                return true;
         }
         return false;
     }
@@ -77,7 +82,7 @@ public class LineDrawerActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_line_drawer);
 
-        initialize();
+        //initialize();
     }
 
     /**

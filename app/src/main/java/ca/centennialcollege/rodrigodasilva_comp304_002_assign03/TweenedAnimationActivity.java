@@ -97,7 +97,7 @@ public class TweenedAnimationActivity extends AppCompatActivity {
      */
     private void setUpButtons() {
         // Stop button
-        stopButton = findViewById(R.id.btnStopAnim);
+        stopButton = findViewById(R.id.stopTweenedButton);
         stopButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -106,7 +106,7 @@ public class TweenedAnimationActivity extends AppCompatActivity {
         });
 
         // Start button
-        startButton = findViewById(R.id.btnStartAnim);
+        startButton = findViewById(R.id.startTweenedButton);
         startButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

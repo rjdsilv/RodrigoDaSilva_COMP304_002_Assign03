@@ -7,7 +7,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.Toast;
 
 import java.util.Objects;
 
@@ -20,7 +19,7 @@ public class FrameByFrameAnimationActivity extends AppCompatActivity {
         setContentView(R.layout.activity_frame_by_frame_animation);
 
         // Start button
-        final Button startButton = findViewById(R.id.btnStartAnim);
+        final Button startButton = findViewById(R.id.startFramedButton);
         startButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -29,7 +28,7 @@ public class FrameByFrameAnimationActivity extends AppCompatActivity {
         });
 
         // Stop button
-        final Button stopButton = findViewById(R.id.btnStopAnim);
+        final Button stopButton = findViewById(R.id.stopFramedButton);
         stopButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
