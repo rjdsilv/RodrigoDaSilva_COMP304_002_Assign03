@@ -11,7 +11,7 @@
         android:background="@color/colorAccent">
 
         <TextView
-            android:id="@+id/lblCheckout"
+            android:id="@+id/lblFramedAnimation"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="@dimen/dimen_05dp"
@@ -38,10 +38,10 @@
             android:id="@+id/btnStartAnim"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/dimen_10dp"
             android:background="@drawable/app_button"
             android:paddingLeft="@dimen/dimen_30sp"
             android:paddingRight="@dimen/dimen_30sp"
-            android:layout_marginEnd="@dimen/dimen_10dp"
             android:text="@string/label_start_animation"
             android:textColor="@android:color/white" />
 

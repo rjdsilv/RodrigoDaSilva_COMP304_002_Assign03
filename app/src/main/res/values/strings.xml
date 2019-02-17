@@ -3,4 +3,7 @@
     <string name="label_start_animation">Start</string>
     <string name="label_stop_animation">Stop</string>
     <string name="label_framed_animation">Framed Animation</string>
+    <string name="desc_earth_image">Earth Image</string>
+    <string name="desc_sun_image">Sun Image</string>
+    <string name="lbl_tweened_animation">Tweened Animation</string>
 </resources>
