@@ -11,6 +11,13 @@ import android.widget.ImageView;
 import ca.centennialcollege.rodrigodasilva_comp304_002_assign03.utils.AnimationStatus;
 import ca.centennialcollege.rodrigodasilva_comp304_002_assign03.utils.PlayingAnimation;
 
+/**
+ * Class responsible for setting up the Tweened Animation Activity. In this activity there will be
+ * a simple simulation of the earth moving around the sun.
+ *
+ * @author Rodrigo da Silva
+ * @version 1.0.0
+ */
 public class TweenedAnimationActivity extends AppCompatActivity {
     private ImageView earthFrontImageView = null;
     private ImageView earthBackImageView = null;
@@ -24,20 +31,31 @@ public class TweenedAnimationActivity extends AppCompatActivity {
     private Button startButton = null;
     private Button stopButton = null;
 
-
+    /**
+     * Event handler for the activity creation.
+     *
+     * @param savedInstanceState The instance to be used.
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tweened_animation);
-        performAnimation();
+        setUpActivity();
     }
 
-    private void performAnimation() {
+    /**
+     * Sets up the activity by creating the necessary images, setting up the necessary animations,
+     * and creating and positioning the buttons.
+     */
+    private void setUpActivity() {
         setUpImages();
         setUpAnimations();
         setUpButtons();
     }
 
+    /**
+     * Sets up the activity necessary images: Background, Sun, and Earth.
+     */
     private void setUpImages() {
         // Sets up the earth image going.
         earthFrontImageView = findViewById(R.id.earthFrontImageView);
@@ -55,6 +73,10 @@ public class TweenedAnimationActivity extends AppCompatActivity {
         sunImageView.setVisibility(View.VISIBLE);
     }
 
+    /**
+     * Sets up the activity animations. There are 2 animations set: The earth moving to the left
+     * (in front of the sun) and the earth moving right (back to the sun).
+     */
     private void setUpAnimations() {
         // Sets up the animation for earth going.
         frontAnimation = AnimationUtils.loadAnimation(this, R.anim.translate_front_sun);
@@ -70,6 +92,9 @@ public class TweenedAnimationActivity extends AppCompatActivity {
         animationStatus = AnimationStatus.RUNNING;
     }
 
+    /**
+     * Sets up the application buttons for starting and stopping the animation.
+     */
     private void setUpButtons() {
         // Stop button
         stopButton = findViewById(R.id.btnStopAnim);
@@ -93,11 +118,17 @@ public class TweenedAnimationActivity extends AppCompatActivity {
         toggleButtons();
     }
 
+    /**
+     * Toggle the buttons clickable property.
+     */
     private void toggleButtons() {
         stopButton.setClickable(AnimationStatus.RUNNING.equals(animationStatus));
         startButton.setClickable(AnimationStatus.STOPPED.equals(animationStatus));
     }
 
+    /**
+     * Stops the current animation and toggles the buttons properly.
+     */
     private void stopAnimation() {
         if (AnimationStatus.RUNNING.equals(animationStatus)) {
             animationStatus = AnimationStatus.STOPPED;
@@ -116,6 +147,9 @@ public class TweenedAnimationActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * Stops the last played animation and toggles the buttons properly.
+     */
     private void startAnimation() {
         if (AnimationStatus.STOPPED.equals(animationStatus)) {
             animationStatus = AnimationStatus.RUNNING;
@@ -134,8 +168,12 @@ public class TweenedAnimationActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * Listener class to take care of the animation where the earth goes in front of the sun.
+     */
     private class FrontAnimationListener implements Animation.AnimationListener {
         public void onAnimationEnd(Animation animation) {
+            // Changes the animation to the back one when the front one ends
             if (AnimationStatus.RUNNING.equals(animationStatus)) {
                 earthFrontImageView.setVisibility(View.INVISIBLE);
                 earthBackImageView.setVisibility(View.VISIBLE);
@@ -151,8 +189,12 @@ public class TweenedAnimationActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * Listener class to take care of the animation where the earth in the back of the sun.
+     */
     private class BackAnimationListener implements Animation.AnimationListener {
         public void onAnimationEnd(Animation animation) {
+            // Changes the animation to the front one when the back one ends
             if (AnimationStatus.RUNNING.equals(animationStatus)) {
                 earthFrontImageView.setVisibility(View.VISIBLE);
                 earthBackImageView.setVisibility(View.INVISIBLE);
