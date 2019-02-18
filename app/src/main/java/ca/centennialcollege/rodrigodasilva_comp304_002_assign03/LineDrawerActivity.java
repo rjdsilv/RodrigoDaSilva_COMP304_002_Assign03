@@ -82,7 +82,7 @@ public class LineDrawerActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_line_drawer);
 
-        //initialize();
+        initialize();
     }
 
     /**
